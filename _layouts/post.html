@@ -49,7 +49,7 @@ layout: base
       {% endif %}
       
       {% if page.categories.size > 0 %}
-      <div class="blog-categories">
+        <div class="blog-categories">
           Categories:
           {% if site.link-categories %}
           {% for category in page.categories %}
@@ -58,7 +58,7 @@ layout: base
           {% else %}
           {{ page.categories | join: ", " }}
           {% endif %}
-      </div>
+        </div>
       {% endif %}
       
 
