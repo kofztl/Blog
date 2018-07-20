@@ -174,6 +174,9 @@ defaults:
 # Use tags index page and make tags on each post clickable
 link-tags: true
 
+# Use categories index page and make categories on each post clickable
+link-categories: true
+
 # Exclude these files from production site
 exclude:
   - CHANGELOG.md

@@ -2,7 +2,7 @@
 title: Unregister A Missing VM from vRealize Automation 7  
 tags: 
 - VMware  
-- vRealize Automation     
+- vRealize Automation  
 categories: 
 - KnowledgeBase  
 
