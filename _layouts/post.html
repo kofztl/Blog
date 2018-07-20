@@ -51,7 +51,7 @@ layout: base
       {% if page.categories.size > 0 %}
       <div class="blog-categories">
           Categories:
-          {% if site.link-tags %}
+          {% if site.link-categories %}
           {% for category in page.categories %}
           <a href="{{ site.baseurl }}/categories#{{- category -}}">{{- category -}}</a>
           {% endfor %}
