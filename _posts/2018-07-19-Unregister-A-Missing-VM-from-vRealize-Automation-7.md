@@ -21,8 +21,8 @@ More info: [Removing a virtual machine from vRealize Automation 7.x using Cloud 
 1. Log in vRealize Automation platform, and select **Machines** under **Items** tab. 
 2. Look for virtual machines in **Missing** status. 
 3. Select target virtual machine and click **Actions**, choose **Unregister**.
-![Unregister a virtual machine](/img/screenshot/Jietu20180719-175609.jpg)
+![Unregister a virtual machine](http://pc58ypabw.bkt.clouddn.com/Jietu20180719-175609.jpg)
 4. Click **Submit** to confirm.  
-![Confirm](/img/screenshot/Jietu20180719-181253.jpg)  
+![Confirm](http://pc58ypabw.bkt.clouddn.com/Jietu20180719-181253.jpg)  
 5. Finally, missing virtual machine has disappeared in vRealize Automation.
 
