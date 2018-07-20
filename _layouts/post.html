@@ -47,6 +47,20 @@ layout: base
           {% endif %}
         </div>
       {% endif %}
+      
+      {% if page.categories.size > 0 %}
+      <div class="blog-categories">
+          Tags:
+          {% if site.link-tags %}
+          {% for category in page.categories %}
+          <a href="{{ site.baseurl }}/categories#{{- category -}}">{{- category -}}</a>
+          {% endfor %}
+          {% else %}
+          {{ page.categories | join: ", " }}
+          {% endif %}
+      </div>
+      {% endif %}
+      
 
       {% if page.social-share %}
         {% include social-share.html %}

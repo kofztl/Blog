@@ -8,15 +8,6 @@ categories:
 
 ---
 
-<ul>
-{% for post in site.posts %}
-<li>
-<a href="{{ post.url }}">{{ post.title }}</a>
-{{ post.excerpt }}
-</li>
-{% endfor %}
-</ul>
-
 ### Purpose
 
 This article provides steps to unregister a missing virtual machine from vRealize Automation 7.
