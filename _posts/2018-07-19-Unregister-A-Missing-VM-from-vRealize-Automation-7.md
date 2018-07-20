@@ -4,7 +4,7 @@ tags:
 - VMware  
 - vRealize Automation     
 categories: 
-- kb  
+- KnowledgeBase  
 
 ---
 
