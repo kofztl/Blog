@@ -6,6 +6,20 @@ use-site-title: true
 ---
 
 <div class="posts-list">
+  
+  <script>
+      (function() {
+       var cx = '004550877361835709140:6_nofhela6i';
+       var gcse = document.createElement('script');
+       gcse.type = 'text/javascript';
+       gcse.async = true;
+       gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(gcse, s);
+       })();
+      </script>
+  <gcse:search></gcse:search>
+      
   {% for post in paginator.posts %}
   <article class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
