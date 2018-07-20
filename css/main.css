@@ -424,6 +424,39 @@ footer .theme-by {
   }
 }
 
+/* --- Categories --- */
+
+.blog-categories {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.blog-categories a {
+    color: {{ site.link-col }};
+    text-decoration: none;
+    padding: 0px 5px;
+}
+
+.blog-categories a:hover {
+    border-radius: 2px;
+    color: {{ site.hover-col }};
+    background-color: #EEE;
+}
+
+.post-preview .blog-categories {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .post-preview .blog-categories {
+        margin-top: 10px;
+    }
+}
+
+
 @media only screen and (max-width: 500px) {
   .post-image, .post-image img {
     height: 100px;
