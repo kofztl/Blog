@@ -104,7 +104,7 @@ url-pretty: "kofztl.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
+gtag: "UA-122678049-1"
 
 # Fill in your Google Analytics ID to track your website using GA
 google_analytics: "UA-122678049-1"
@@ -148,7 +148,7 @@ title-separator: "-"
 timezone: "Asia/Shanghai"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /blog/:year/:month/:day/:title/
 paginate: 5
 
 kramdown:
