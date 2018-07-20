@@ -217,6 +217,21 @@ img {
 }
 
 /* Multi-level navigation links */
+.search-link .search-icon {
+    display: none;
+}
+.search-link .search-text {
+    display: inline;
+}
+@media only screen and (min-width: 768px) {
+    .search-link .search-icon {
+        display: inline;
+    }
+    .search-link .search-text {
+        display: none;
+    }
+    
+}
 .navbar-custom .nav .navlinks-container {
   position: relative;
 }
