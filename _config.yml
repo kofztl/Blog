@@ -148,7 +148,7 @@ title-separator: "-"
 timezone: "Asia/Shanghai"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year/:month/:day/:title/
+permalink: date
 paginate: 5
 
 kramdown:
