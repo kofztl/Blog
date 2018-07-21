@@ -135,8 +135,14 @@ When traffic increases, we will need to scale the application to keep up with us
 
 ##Scaling overview
 
-![](http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg)
-![](http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg)
+<figure class="half">
+    <img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg">
+    <img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg">
+</figure>
+
+<div align="center">
+<img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg" height="500px" ><img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg" height="500px" >    
+</div>
 
 Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes with available resources. Scaling in will reduce the number of Pods to the new desired state. Kubernetes also supports [autoscaling](http://kubernetes.io/docs/user-guide/horizontal-pod-autoscaling/) of Pods, but it is outside of the scope of this tutorial. Scaling to zero is also possible, and it will terminate all Pods of the specified Deployment.
 
