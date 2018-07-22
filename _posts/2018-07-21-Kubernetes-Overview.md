@@ -11,12 +11,12 @@ With modern web services, users expect applications to be available 24/7, and de
 
 ## Kubernetes Basics Modules
 
-1. Create a Kubernetes cluster
-2. Deplay an app
-3. Explorer your app
-4. Expose your app publicly
-5. Scale up your app
-6. Update your app
+* Create a Kubernetes cluster
+* Deplay an app
+* Explorer your app
+* Expose your app publicly
+* Scale up your app
+* Update your app
 
 ## Kubernetes Clusters
 
@@ -30,7 +30,7 @@ A Kubernetes cluster consists of two types of resources:
 
 ## Cluster Diagram
 
-![](http://pc58ypabw.bkt.clouddn.com/module_01_cluster.svg)
+<img src=http://pc58ypabw.bkt.clouddn.com/module_01_cluster.svg width=50% />
 
 **The Master is responsible for managing the cluster.** The master coordinates all activities in your cluster, such as scheduling applications, maintaining applications' desired state, scaling applications, and rolling out new updates.
 
