@@ -5,11 +5,11 @@ tags: Kubernetes
 
 ---
 
-##What can Kubernetes do for you
+## What can Kubernetes do for you
 
 With modern web services, users expect applications to be available 24/7, and developers expect to deploy new versions of those applications several times a day. Containerization helps package software to serve these goals, enabling applications to be released and updated in an easy and fast way without downtime. Kubernetes helps you make sure those containerized applications run where and when you want, and helps them find the resources and tools they need to work. Kubernetes is a production-ready, open source platform designed with Google's accumulated experience in container orchestration, combined with best-of-breed ideas from the community.
 
-##Kubernetes Basics Modules
+## Kubernetes Basics Modules
 
 1. Create a Kubernetes cluster
 2. Deplay an app
@@ -18,7 +18,7 @@ With modern web services, users expect applications to be available 24/7, and de
 5. Scale up your app
 6. Update your app
 
-##Kubernetes Clusters
+## Kubernetes Clusters
 
 **Kubernetes coordinates a highly available cluster of computers that are connected to work as a single unit.** The abstractions in Kubernetes allow you to deploy containerized applications to a cluster without tying them specifically to individual machines. To make use of this new model of deployment, applications need to be packaged in a way that decouples them from individual hosts: they need to be containerized. Containerized applications are more flexible and available than in past deployment models, where applications were installed directly onto specific machines as packages deeply integrated into the host. **Kubernetes automates the distribution and scheduling of application containers across a cluster in a more efficient way.** Kubernetes is an open-source platform and is production-ready.
 
@@ -28,7 +28,7 @@ A Kubernetes cluster consists of two types of resources:
 
 * **Nodes** are the workers that run applications
 
-##Cluster Diagram
+## Cluster Diagram
 
 ![](http://pc58ypabw.bkt.clouddn.com/module_01_cluster.svg)
 
@@ -40,7 +40,7 @@ Masters manage the cluster and the nodes are used to host the running applicatio
 
 When you deploy applications on Kubernetes, you tell the master to start the application containers. The master schedules the containers to run on the cluster's nodes. **The nodes communicate with the master using the Kubernetes API, which the master exposes.** End users can also use the Kubernetes API directly to interact with the cluster.
 
-##Kubernetes Deployments
+## Kubernetes Deployments
 
 Once you have a running Kubernetes cluster, you can deploy your containerized applications on top of it. To do so, you create a Kubernetes **Deployment** configuration. The Deployment instructs Kubernetes how to create and update instances of your application. Once you've created a Deployment, the Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster.
 
@@ -48,13 +48,13 @@ Once the application instances are created, a Kubernetes Deployment Controller c
 
 In a pre-orchestration world, installation scripts would often be used to start applications, but they did not allow recovery from machine failure. By both creating your application instances and keeping them running across Nodes, Kubernetes Deployments provide a fundamentally different approach to application management.
 
-##Deploying your first app on Kubernetes
+## Deploying your first app on Kubernetes
 
 ![](http://pc58ypabw.bkt.clouddn.com/module_02_first_app.svg)
 
 You can create and manage a Deployment by using the Kubernetes command line interface, Kubectl. **Kubectl** uses the Kubernetes API to interact with the cluster. In this module, you'll learn the most common Kubectl commands needed to create Deployments that run your applications on a Kubernetes cluster.
 
-##Kubernetes Pods
+## Kubernetes Pods
 
 When you created a Deployment, Kubernetes created a **Pod** to host your application instance. A Pod is a Kubernetes abstraction that represents a group of one or more application containers (such as Docker or rkt), and some shared resources for those containers. Those resources include:
 
@@ -66,11 +66,11 @@ A Pod models an application-specific "logical host" and can contain different ap
 
 Pods are the atomic unit on the Kubernetes platform. When we create a Deployment on Kubernetes, that Deployment creates Pods with containers inside them (as opposed to creating containers directly). Each Pod is tied to the Node where it is scheduled, and remains there until termination (according to restart policy) or deletion. In case of a Node failure, identical Pods are scheduled on other available Nodes in the cluster.
 
-##Pods overview
+## Pods overview
 
 ![](http://pc58ypabw.bkt.clouddn.com/module_03_pods.svg)
 
-##Nodes
+## Nodes
 
 A Pod always runs on a **Node**. A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the Master. A Node can have multiple pods, and the Kubernetes master automatically handles scheduling the pods across the Nodes in the cluster. The Master's automatic scheduling takes into account the available resources on each Node.
 
@@ -79,11 +79,11 @@ Every Kubernetes Node runs at least:
 * Kubelet, a process responsible for communication between the Kubernetes Master and the Node; it manages the Pods and the containers running on a machine.
 * A container runtime (like Docker, rkt) responsible for pulling the container image from a registry, unpacking the container, and running the application.
 
-##Node overview
+## Node overview
 
 ![](http://pc58ypabw.bkt.clouddn.com/module_03_nodes.svg)
 
-##Troubleshooting with kubectl
+## Troubleshooting with kubectl
 
 The most common operations can be done with the following kubectl commands:
 
@@ -94,7 +94,7 @@ The most common operations can be done with the following kubectl commands:
 
 You can use these commands to see when applications were deployed, what their current statuses are, where they are running and what their configurations are.
 
-##Overview of Kubernetes Services
+## Overview of Kubernetes Services
 
 Kubernetes Pods are mortal. Pods in fact have a lifecycle. When a worker node dies, the Pods running on the Node are also lost. A ReplicationController might then dynamically drive the cluster back to desired state via creation of new Pods to keep your application running. As another example, consider an image-processing backend with 3 replicas. Those replicas are fungible; the front-end system should not care about backend replicas or even if a Pod is lost and recreated. That said, each Pod in a Kubernetes cluster has a unique IP address, even Pods on the same Node, so there needs to be a way of automatically reconciling changes among Pods so that your applications continue to function.
 
@@ -111,7 +111,7 @@ More information about the different types of Services can be found in the [Usin
 
 Additionally, note that there are some use cases with Services that involve not defining `selector` in the spec. A Service created without `selector` will also not create the corresponding Endpoints object. This allows users to manually map a Service to specific endpoints. Another possibility why there may be no selector is you are strictly using `type: ExternalName`.
 
-##Services and Labels
+## Services and Labels
 
 ![](http://pc58ypabw.bkt.clouddn.com/module_04_services.svg)
 
@@ -127,13 +127,13 @@ Services match a set of Pods using [labels and selectors](https://kubernetes.io/
 
 Labels can be attached to objects at creation time or later on. They can be modified at any time. 
 
-##Scaling an application
+## Scaling an application
 
 When traffic increases, we will need to scale the application to keep up with user demand.
 
 **Scaling** is accomplished by changing the number of replicas in a Deployment
 
-##Scaling overview
+## Scaling overview
 
 <figure class="half">
     <img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg">
@@ -148,13 +148,13 @@ Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes
 
 Running multiple instances of an application will require a way to distribute the traffic to all of them. Services have an integrated load-balancer that will distribute network traffic to all Pods of an exposed Deployment. Services will monitor continuously the running Pods using endpoints, to ensure the traffic is sent only to available Pods.
 
-##Updating an application
+## Updating an application
 
 Users expect applications to be available all the time and developers are expected to deploy new versions of them several times a day. In Kubernetes this is done with **rolling updates**. Rolling updates allow Deployments' update to take place with zero downtime by incrementally updating Pods instances with new ones. The new Pods will be scheduled on Nodes with available resources.
 
 In the previous module we scaled our application to run multiple instances. This is a requirement for performing updates without affecting application availability. By default, the maximum number of Pods that can be unavailable during the update and the maximum number of new Pods that can be created, is one. Both options can be configured to either numbers or percentages (of Pods). In Kubernetes, updates are versioned and any Deployment update can be reverted to previous (stable) version.
 
-##Rolling updates overview
+## Rolling updates overview
 
 ![](http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates1.svg)
 ![](http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates2.svg)
