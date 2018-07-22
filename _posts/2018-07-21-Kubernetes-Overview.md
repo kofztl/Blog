@@ -30,7 +30,7 @@ A Kubernetes cluster consists of two types of resources:
 
 ## Cluster Diagram
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_01_cluster.svg width=50% />
+<img src=http://pc58ypabw.bkt.clouddn.com/module_01_cluster.svg width=50% />  
 
 **The Master is responsible for managing the cluster.** The master coordinates all activities in your cluster, such as scheduling applications, maintaining applications' desired state, scaling applications, and rolling out new updates.
 
@@ -50,7 +50,7 @@ In a pre-orchestration world, installation scripts would often be used to start 
 
 ## Deploying your first app on Kubernetes
 
-![](http://pc58ypabw.bkt.clouddn.com/module_02_first_app.svg)
+<img src=http://pc58ypabw.bkt.clouddn.com/module_02_first_app.svg width=50% />  
 
 You can create and manage a Deployment by using the Kubernetes command line interface, Kubectl. **Kubectl** uses the Kubernetes API to interact with the cluster. In this module, you'll learn the most common Kubectl commands needed to create Deployments that run your applications on a Kubernetes cluster.
 
@@ -81,7 +81,7 @@ Every Kubernetes Node runs at least:
 
 ## Node overview
 
-![](http://pc58ypabw.bkt.clouddn.com/module_03_nodes.svg)
+<img src=http://pc58ypabw.bkt.clouddn.com/module_03_nodes.svg width=50%>  
 
 ## Troubleshooting with kubectl
 
