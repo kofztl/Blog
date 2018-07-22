@@ -68,7 +68,7 @@ Pods are the atomic unit on the Kubernetes platform. When we create a Deployment
 
 ## Pods overview
 
-![](http://pc58ypabw.bkt.clouddn.com/module_03_pods.svg)
+<img src=http://pc58ypabw.bkt.clouddn.com/module_03_pods.svg width=80% />  
 
 ## Nodes
 
@@ -81,7 +81,7 @@ Every Kubernetes Node runs at least:
 
 ## Node overview
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_03_nodes.svg width=50%>  
+<img src=http://pc58ypabw.bkt.clouddn.com/module_03_nodes.svg width=50% />  
 
 ## Troubleshooting with kubectl
 
@@ -113,7 +113,7 @@ Additionally, note that there are some use cases with Services that involve not 
 
 ## Services and Labels
 
-![](http://pc58ypabw.bkt.clouddn.com/module_04_services.svg)
+<img src=http://pc58ypabw.bkt.clouddn.com/module_04_services.svg width=50% />  
 
 A Service routes traffic across a set of Pods. Services are the abstraction that allow pods to die and replicate in Kubernetes without impacting your application. Discovery and routing among dependent Pods (such as the frontend and backend components in an application) is handled by Kubernetes Services.
 
@@ -123,7 +123,7 @@ Services match a set of Pods using [labels and selectors](https://kubernetes.io/
 * Embed version tags
 * Classify an object using tags
 
-![](http://pc58ypabw.bkt.clouddn.com/module_04_labels.svg)
+<img src=http://pc58ypabw.bkt.clouddn.com/module_04_labels.svg width=50% />  
 
 Labels can be attached to objects at creation time or later on. They can be modified at any time. 
 
