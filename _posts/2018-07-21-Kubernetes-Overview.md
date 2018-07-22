@@ -135,10 +135,7 @@ When traffic increases, we will need to scale the application to keep up with us
 
 ## Scaling overview
 
-<figure class="half">
-    <img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg">
-    <img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg">
-</figure>
+<img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg"><img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg">
 
 <div align="center">
 <img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg width=50% /><img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg width=50% />    
