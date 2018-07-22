@@ -137,10 +137,6 @@ When traffic increases, we will need to scale the application to keep up with us
 
 <img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg width=50% /><img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg width=50% />
 
-<div align="center">
-<img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg width=50% /><img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg width=50% />    
-</div>
-
 Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes with available resources. Scaling in will reduce the number of Pods to the new desired state. Kubernetes also supports [autoscaling](http://kubernetes.io/docs/user-guide/horizontal-pod-autoscaling/) of Pods, but it is outside of the scope of this tutorial. Scaling to zero is also possible, and it will terminate all Pods of the specified Deployment.
 
 Running multiple instances of an application will require a way to distribute the traffic to all of them. Services have an integrated load-balancer that will distribute network traffic to all Pods of an exposed Deployment. Services will monitor continuously the running Pods using endpoints, to ensure the traffic is sent only to available Pods.
@@ -153,10 +149,8 @@ In the previous module we scaled our application to run multiple instances. This
 
 ## Rolling updates overview
 
-![](http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates1.svg)
-![](http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates2.svg)
-![](http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates3.svg)
-![](http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates4.svg)
+<img src=http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates1.svg width=50% /><img src=http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates2.svg width=50% />  
+<img src=http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates3.svg width=50% /><img src =http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates4.svg width=50% />  
 
 Similar to application Scaling, if a Deployment is exposed publicly, the Service will load-balance the traffic only to available Pods during the update. An available Pod is an instance that is available to the users of the application.
 
