@@ -30,7 +30,7 @@ A Kubernetes cluster consists of two types of resources:
 
 ## Cluster Diagram
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_01_cluster.svg width=50% />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_01_cluster.svg" width=50% />  
 
 **The Master is responsible for managing the cluster.** The master coordinates all activities in your cluster, such as scheduling applications, maintaining applications' desired state, scaling applications, and rolling out new updates.
 
