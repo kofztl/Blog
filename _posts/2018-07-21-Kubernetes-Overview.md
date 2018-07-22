@@ -50,7 +50,7 @@ In a pre-orchestration world, installation scripts would often be used to start 
 
 ## Deploying your first app on Kubernetes
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_02_first_app.svg width=50% />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_02_first_app.svg" width="50%" />  
 
 You can create and manage a Deployment by using the Kubernetes command line interface, Kubectl. **Kubectl** uses the Kubernetes API to interact with the cluster. In this module, you'll learn the most common Kubectl commands needed to create Deployments that run your applications on a Kubernetes cluster.
 
@@ -68,7 +68,7 @@ Pods are the atomic unit on the Kubernetes platform. When we create a Deployment
 
 ## Pods overview
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_03_pods.svg width=80% />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_03_pods.svg" width="80%" />  
 
 ## Nodes
 
@@ -81,7 +81,7 @@ Every Kubernetes Node runs at least:
 
 ## Node overview
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_03_nodes.svg width=50% />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_03_nodes.svg" width="50%" />  
 
 ## Troubleshooting with kubectl
 
@@ -113,7 +113,7 @@ Additionally, note that there are some use cases with Services that involve not 
 
 ## Services and Labels
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_04_services.svg width=50% />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_04_services.svg" width="50%" />  
 
 A Service routes traffic across a set of Pods. Services are the abstraction that allow pods to die and replicate in Kubernetes without impacting your application. Discovery and routing among dependent Pods (such as the frontend and backend components in an application) is handled by Kubernetes Services.
 
@@ -123,7 +123,7 @@ Services match a set of Pods using [labels and selectors](https://kubernetes.io/
 * Embed version tags
 * Classify an object using tags
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_04_labels.svg width=50% />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_04_labels.svg" width="50%" />  
 
 Labels can be attached to objects at creation time or later on. They can be modified at any time. 
 
@@ -135,7 +135,7 @@ When traffic increases, we will need to scale the application to keep up with us
 
 ## Scaling overview
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg width=50% /><img src=http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg width=50% />
+<img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling1.svg" width="50%" /><img src="http://pc58ypabw.bkt.clouddn.com/module_05_scaling2.svg" width="50%" />
 
 Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes with available resources. Scaling in will reduce the number of Pods to the new desired state. Kubernetes also supports [autoscaling](http://kubernetes.io/docs/user-guide/horizontal-pod-autoscaling/) of Pods, but it is outside of the scope of this tutorial. Scaling to zero is also possible, and it will terminate all Pods of the specified Deployment.
 
@@ -149,8 +149,8 @@ In the previous module we scaled our application to run multiple instances. This
 
 ## Rolling updates overview
 
-<img src=http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates1.svg width=50% /><img src=http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates2.svg width=50% />  
-<img src=http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates3.svg width=50% /><img src =http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates4.svg width=50% />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates1.svg" width="50%" /><img src="http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates2.svg" width="50%" />  
+<img src="http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates3.svg" width="50%" /><img src ="http://pc58ypabw.bkt.clouddn.com/module_06_rollingupdates4.svg" width="50%" />  
 
 Similar to application Scaling, if a Deployment is exposed publicly, the Service will load-balance the traffic only to available Pods during the update. An available Pod is an instance that is available to the users of the application.
 
