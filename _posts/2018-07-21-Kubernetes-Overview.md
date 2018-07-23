@@ -52,7 +52,7 @@ In a pre-orchestration world, installation scripts would often be used to start 
 
 <img src="http://pc58ypabw.bkt.clouddn.com/module_02_first_app.svg" width="50%" />  
 
-You can create and manage a Deployment by using the Kubernetes command line interface, Kubectl. **Kubectl** uses the Kubernetes API to interact with the cluster. In this module, you'll learn the most common Kubectl commands needed to create Deployments that run your applications on a Kubernetes cluster.
+You can create and manage a Deployment by using the Kubernetes command line interface, Kubectl. **Kubectl** uses the Kubernetes API to interact with the cluster. 
 
 ## Kubernetes Pods
 
@@ -145,7 +145,7 @@ Running multiple instances of an application will require a way to distribute th
 
 Users expect applications to be available all the time and developers are expected to deploy new versions of them several times a day. In Kubernetes this is done with **rolling updates**. Rolling updates allow Deployments' update to take place with zero downtime by incrementally updating Pods instances with new ones. The new Pods will be scheduled on Nodes with available resources.
 
-In the previous module we scaled our application to run multiple instances. This is a requirement for performing updates without affecting application availability. By default, the maximum number of Pods that can be unavailable during the update and the maximum number of new Pods that can be created, is one. Both options can be configured to either numbers or percentages (of Pods). In Kubernetes, updates are versioned and any Deployment update can be reverted to previous (stable) version.
+By default, the maximum number of Pods that can be unavailable during the update and the maximum number of new Pods that can be created, is one. Both options can be configured to either numbers or percentages (of Pods). In Kubernetes, updates are versioned and any Deployment update can be reverted to previous (stable) version.
 
 ## Rolling updates overview
 
