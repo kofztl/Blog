@@ -13,9 +13,9 @@ categories: Blog
 
 #### 关闭SELinux和防火墙  
 ```  
-sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config  
-setenforce 0  
-systemctl stop firewalld && systemctl disable firewalld  
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+setenforce 0
+systemctl stop firewalld && systemctl disable firewalld
 ```
 
 #### RHEL 7/CentOS 7上配置sysctl的参数防止流量绕过iptables  
@@ -91,7 +91,6 @@ docker tag keveon/k8s-dns-sidecar-amd64:1.14.8 k8s.gcr.io/k8s-dns-sidecar-amd64:
 docker tag keveon/etcd-amd64:3.1.12 k8s.gcr.io/etcd-amd64:3.1.12  
 docker tag keveon/flannel:v0.10.0-amd64 quay.io/coreos/flannel:v0.10.0-amd64  
 docker tag keveon/pause-amd64:3.1 k8s.gcr.io/pause-amd64:3.1   
-
 ```
 
 #### Node节点  
@@ -111,7 +110,6 @@ docker tag keveon/kubernetes-dashboard-amd64:v1.8.3 k8s.gcr.io/kubernetes-dashbo
 docker tag keveon/heapster-influxdb-amd64:v1.3.3 k8s.gcr.io/heapster-influxdb-amd64:v1.3.3  
 docker tag keveon/heapster-grafana-amd64:v4.4.3 k8s.gcr.io/heapster-grafana-amd64:v4.4.3  
 docker tag keveon/heapster-amd64:v1.4.2 k8s.gcr.io/heapster-amd64:v1.4.2  
-
 ```  
 
 ## Kubernetes安装与配置（所有节点）  
