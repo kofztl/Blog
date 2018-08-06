@@ -9,7 +9,7 @@ categories: Blog
 
 ## Install Content Pack for Pivotal Cloud Foundry  
   
-Log in vRealize Log Insight with administrator. In the **Content Pack Marketplace**, find **Pivotal - Cloud Foundry** content pack and install it.
+Log in to vRealize Log Insight with administrator. In the **Content Pack Marketplace**, find **Pivotal - Cloud Foundry** content pack and install it.
 
 ![Content Pack Marketplace](http://pc58ypabw.bkt.clouddn.com/PCF_Content_Pack.jpg)  
 
@@ -24,7 +24,7 @@ Follow content pack setup instructions, create a virtual IP address for PCF sysl
 
 ## Configure syslog in PCF tiles
 
-Log in Pivotal Ops Manager with administrator, configure each tile which you want to forward syslog to vRealize Log Insight with virtual IP and port 514.
+Log in to Pivotal Ops Manager with administrator, configure each tile which you want to forward syslog to vRealize Log Insight with virtual IP and port 514.
 
 ![Tile Syslog Configuration](http://pc58ypabw.bkt.clouddn.com/syslog_in_tile.jpg)
 
