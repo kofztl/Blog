@@ -28,8 +28,9 @@ sysctl --system
 ```  
 
 #### 关闭系统SWAP  
-`swapoff -a`  
-
+```  
+swapoff -a  
+```  
 修改/etc/fstab文件，注释SWAP自动挂载
 
 ## Docker安装与配置（所有节点）
@@ -61,7 +62,9 @@ ExecStart=/usr/bin/dockerd
 > 注：需额外修改/etc/systemd/system/multi-user.target.wants/docker.service，找到 ExecStart= 这一行，在这行最后添加加速器地址 --registry-mirror=<加速器地址>  
 
 #### 重启Docker服务
-`systemctl daemon-reload && systemctl restart docker && systemctl status docker`  
+```  
+systemctl daemon-reload && systemctl restart docker && systemctl status docker  
+```  
 
 ## 下载镜像  
 
@@ -126,7 +129,9 @@ EOF
 ```  
 
 #### 安装制定版本的kubeadm  
-`yum install -y kubeadm-1.10.0`  
+```  
+yum install -y kubeadm-1.10.0  
+```  
 
 #### 配置kubelet参数  
 确保kubelet的配置文件/etc/systemd/system/kubelet.service.d/10-kubeadm.conf里的--cgroup-driver和docker info中的一致，一般为cgroupfs。  
@@ -141,7 +146,9 @@ systemctl start kubelet
 ## 使用kubeadm init初始化集群（仅Master节点执行）  
 
 #### 初始化命令  
-`kubeadm init  --skip-preflight-checks --kubernetes-version=v1.10.0 --pod-network-cidr=10.244.0.0/16`  
+```  
+kubeadm init  --skip-preflight-checks --kubernetes-version=v1.10.0 --pod-network-cidr=10.244.0.0/16  
+```  
 > 注： 如果执行失败可使用`kubeadm reset`进行清理。  
 
 初始化主要过程为：
@@ -162,7 +169,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```  
 
 #### 查看集群状态  
-`kubectl get cs`
+```  
+kubectl get cs  
+```  
 
 ## 安装网络插件——flannel（仅Master节点执行）  
 
@@ -176,14 +185,20 @@ configmap "kube-flannel-cfg" created
 daemonset.extensions "kube-flannel-ds" created  
 ```  
 #### 安装后检查网络配置中已存在flannel网络  
-`ip a`  
+```  
+ip a  
+```  
 
 ## 向Kubernetes中添加Node（每个Node中执行）  
 
-`kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>`  
+```  
+kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>  
+```  
 
 #### 获取节点状态  
-`kubectl get nodes`  
+```  
+kubectl get nodes  
+```  
 
 ## 部署Dashboard插件  
 #### 下载Dashboard插件  
@@ -228,7 +243,9 @@ kubectl create -f kubernetes-dashboard-admin.rbac.yaml
 ```  
 
 #### 查看分配到的NodePort  
-`kubectl get svc,pod --all-namespaces | grep dashboard`  
+```  
+kubectl get svc,pod --all-namespaces | grep dashboard  
+```  
 
 #### 部署Heapster插件  
 安装Heapster为集群添加使用统计和监控功能，为Dashboard添加仪表盘。  
@@ -243,7 +260,9 @@ kubectl create -f ./
 ```  
 
 #### 查看kubernete-dashboard-admin的token  
-`kubectl -n kube-system get secret | grep kubernetes-dashboard-admin`  
+```  
+kubectl -n kube-system get secret | grep kubernetes-dashboard-admin  
+```  
 
 #### 使用Firefox或Safari通过填写token的方式访问Dashboard  
 ![](http://pc58ypabw.bkt.clouddn.com/Jietu20180806-210614@2x.jpg)  
