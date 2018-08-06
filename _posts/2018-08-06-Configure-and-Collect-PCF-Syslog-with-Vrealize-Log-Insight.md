@@ -2,6 +2,7 @@
 title: Configure and collect PCF syslog with vRealize Log Insight    
 tags:  
 - Pivotal Cloud Foundry  
+- VMware  
 - vRealize Log Insight    
 categories: Blog  
 
