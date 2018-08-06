@@ -1,8 +1,8 @@
 ---
 title: Configure and collect PCF syslog with vRealize Log Insight    
 tags:  
-  --Pivotal Cloud Foundry  
-  --vRealize Log Insight    
+- Pivotal Cloud Foundry  
+- vRealize Log Insight    
 categories: Blog  
 
 ---
@@ -13,7 +13,6 @@ Log in to vRealize Log Insight with administrator. In the **Content Pack Marketp
 
 ![Content Pack Marketplace](http://pc58ypabw.bkt.clouddn.com/PCF_Content_Pack.jpg)  
 
- 
 
 ## Configure VIP for PCF datacollector   
 
