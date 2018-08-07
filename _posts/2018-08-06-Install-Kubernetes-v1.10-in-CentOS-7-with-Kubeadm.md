@@ -12,15 +12,15 @@ categories: Blog
 
 
 ## 系统配置（所有节点都要执行）  
-
+  
 #### 关闭SELinux和防火墙  
-
+  
 ```  
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 setenforce 0
 systemctl stop firewalld && systemctl disable firewalld
 ```
-
+  
 #### RHEL 7/CentOS 7上配置sysctl的参数防止流量绕过iptables  
 ```  
 cat <<EOF >  /etc/sysctl.d/k8s.conf
@@ -29,16 +29,15 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sysctl --system
 ```  
-
+  
 #### 关闭系统SWAP  
 ```  
 swapoff -a
 ```  
 修改/etc/fstab文件，注释SWAP自动挂载  
-
-
+  
 ## Docker安装与配置（所有节点）
-
+  
 #### 安装Docker
 ```  
 mkdir ~/k8s
