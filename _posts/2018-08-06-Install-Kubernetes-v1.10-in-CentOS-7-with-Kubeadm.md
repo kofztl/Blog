@@ -7,11 +7,14 @@ categories: Blog
 
 ## 准备工作  
   
-* 准备3-4台CentOS 7.2虚拟机 
+* 准备3-4台CentOS 7.2虚拟机  
+
+
 
 ## 系统配置（所有节点都要执行）  
 
 #### 关闭SELinux和防火墙  
+
 ```  
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 setenforce 0
@@ -31,7 +34,8 @@ sysctl --system
 ```  
 swapoff -a
 ```  
-修改/etc/fstab文件，注释SWAP自动挂载
+修改/etc/fstab文件，注释SWAP自动挂载  
+
 
 ## Docker安装与配置（所有节点）
 
