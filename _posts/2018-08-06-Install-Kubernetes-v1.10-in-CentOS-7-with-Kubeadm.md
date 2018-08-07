@@ -141,6 +141,7 @@ systemctl enable kubelet
 systemctl start kubelet
 ```  
 > 注： kubelet启动失败可暂时忽略，因为还没有初始化  
+
 <br />  
 ## 使用kubeadm init初始化集群（仅Master节点执行）  
 
@@ -231,7 +232,7 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- kind: ServiceAccount
+  kind: ServiceAccount
   name: kubernetes-dashboard-admin
   namespace: kube-system
 ```  
