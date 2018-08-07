@@ -36,7 +36,7 @@ swapoff -a
   
 ## Docker安装与配置（所有节点）
   
-#### 安装Docker
+安装Docker
 ```  
 mkdir ~/k8s
 cd k8s
@@ -48,7 +48,7 @@ systemctl enable docker
 systemctl start docker
 ```  
 
-#### 配置Docker  
+配置Docker  
 开启iptables filter表的FORWARD链  
 编辑/lib/systemd/system/docker.service，在ExecStart=..上面加入如下内容：  
 ```  
@@ -56,20 +56,20 @@ ExecStartPost=/usr/sbin/iptables -I FORWARD -s 0.0.0.0/0 -j ACCEPT
 ExecStart=/usr/bin/dockerd
 .....  
 ```  
-#### 配置国内镜像加速器。
+配置国内镜像加速器
 因为kubeadm默认要从google的镜像仓库下载镜像，但目前国内无法访问google镜像仓库，所以需要我们配置成国内的镜像仓库，并在kubeadm init前pull下所需的镜像。  
 
 使用阿里云镜像加速器：[阿里云容器hub](https://dev.aliyun.com/search.html)。 登录之后，进入管理中心-->镜像加速器-->操作文档，根据提示进行设置即可。  
 > 注：需额外修改/etc/systemd/system/multi-user.target.wants/docker.service，找到 ExecStart= 这一行，在这行最后添加加速器地址 --registry-mirror=<加速器地址>  
 
-#### 重启Docker服务
+重启Docker服务
 ```  
 systemctl daemon-reload && systemctl restart docker && systemctl status docker
 ```  
 
 ## 下载镜像  
 
-#### Master节点  
+Master节点  
 ```  
 docker pull keveon/kube-apiserver-amd64:v1.10.0
 docker pull keveon/kube-scheduler-amd64:v1.10.0
@@ -94,7 +94,7 @@ docker tag keveon/flannel:v0.10.0-amd64 quay.io/coreos/flannel:v0.10.0-amd64
 docker tag keveon/pause-amd64:3.1 k8s.gcr.io/pause-amd64:3.1
 ```
 
-#### Node节点  
+Node节点  
 ```  
 docker pull keveon/kube-proxy-amd64:v1.10.0
 docker pull keveon/flannel:v0.10.0-amd64
@@ -115,7 +115,7 @@ docker tag keveon/heapster-amd64:v1.4.2 k8s.gcr.io/heapster-amd64:v1.4.2
 
 ## Kubernetes安装与配置（所有节点）  
 
-#### 配置yum源并安装  
+配置yum源并安装  
 ```  
 cat > /etc/yum.repos.d/kubernetes.repo <<EOF
 [kubernetes]
@@ -127,15 +127,15 @@ repo_gpgcheck=0
 EOF
 ```  
 
-#### 安装制定版本的kubeadm  
+安装制定版本的kubeadm  
 ```  
 yum install -y kubeadm-1.10.0
 ```  
 
-#### 配置kubelet参数  
+配置kubelet参数  
 确保kubelet的配置文件/etc/systemd/system/kubelet.service.d/10-kubeadm.conf里的--cgroup-driver和docker info中的一致，一般为cgroupfs。  
 
-#### 配置开机自动运行kubelet并启动kubelet  
+配置开机自动运行kubelet并启动kubelet  
 ```  
 systemctl enable kubelet
 systemctl start kubelet
@@ -144,7 +144,7 @@ systemctl start kubelet
 
 ## 使用kubeadm init初始化集群（仅Master节点执行）  
 
-#### 初始化命令  
+初始化命令  
 ```  
 kubeadm init  --skip-preflight-checks --kubernetes-version=v1.10.0 --pod-network-cidr=10.244.0.0/16
 ```  
@@ -167,7 +167,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```  
 
-#### 查看集群状态  
+查看集群状态  
 ```  
 kubectl get cs
 ```  
@@ -183,7 +183,7 @@ serviceaccount "flannel" created
 configmap "kube-flannel-cfg" created
 daemonset.extensions "kube-flannel-ds" created
 ```  
-#### 安装后检查网络配置中已存在flannel网络  
+安装后检查网络配置中已存在flannel网络  
 ```  
 ip a  
 ```  
@@ -194,13 +194,14 @@ ip a
 kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
 ```  
 
-#### 获取节点状态  
+获取节点状态  
 ```  
 kubectl get nodes
 ```  
 
 ## 部署Dashboard插件  
-#### 下载Dashboard插件  
+
+下载Dashboard插件  
 ```  
 cd ~/k8s
 wget https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
@@ -208,7 +209,7 @@ wget https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/re
 
 修改yaml配置参数，在spec中增加type: NodePort， 这样可以通过主机IP地址和对应端口访问Dashboard。  
 
-#### 创建kubernetes-dashboard-admin.rbac.yaml  
+创建kubernetes-dashboard-admin.rbac.yaml  
 ```  
 ---  
 apiVersion: v1
@@ -235,18 +236,18 @@ subjects:
   namespace: kube-system
 ```  
 
-#### 创建Pod  
+创建Pod  
 ```  
 kubectl create -f kubernetes-dashboard.yaml
 kubectl create -f kubernetes-dashboard-admin.rbac.yaml
 ```  
 
-#### 查看分配到的NodePort  
+查看分配到的NodePort  
 ```  
 kubectl get svc,pod --all-namespaces | grep dashboard
 ```  
 
-#### 部署Heapster插件  
+部署Heapster插件  
 安装Heapster为集群添加使用统计和监控功能，为Dashboard添加仪表盘。  
 ```  
 mkdir -p ~/k8s/heapster
@@ -258,11 +259,11 @@ wget https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-co
 kubectl create -f ./
 ```  
 
-#### 查看kubernete-dashboard-admin的token  
+查看kubernete-dashboard-admin的token  
 ```  
 kubectl -n kube-system get secret | grep kubernetes-dashboard-admin
 ```  
 
-#### 使用Firefox或Safari通过填写token的方式访问Dashboard  
+使用Firefox或Safari通过填写token的方式访问Dashboard  
 ![](http://pc58ypabw.bkt.clouddn.com/Jietu20180806-210614@2x.jpg)  
 
