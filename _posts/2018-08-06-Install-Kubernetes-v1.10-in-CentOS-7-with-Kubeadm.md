@@ -8,18 +8,18 @@ categories: Blog
 ## 准备工作  
   
 * 准备3-4台CentOS 7.2虚拟机  
+<br />
 
 ## 系统配置（所有节点都要执行）  
 
 关闭SELinux和防火墙  
-  
 ```  
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 setenforce 0
 systemctl stop firewalld && systemctl disable firewalld
-```
-<br />
-#### RHEL 7/CentOS 7上配置sysctl的参数防止流量绕过iptables  
+```  
+
+RHEL 7/CentOS 7上配置sysctl的参数防止流量绕过iptables  
 ```  
 cat <<EOF >  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -28,7 +28,7 @@ EOF
 sysctl --system
 ```  
   
-#### 关闭系统SWAP  
+关闭系统SWAP  
 ```  
 swapoff -a
 ```  
