@@ -127,7 +127,7 @@ repo_gpgcheck=0
 EOF
 ```  
 
-安装制定版本的kubeadm  
+安装指定版本的kubeadm  
 ```  
 yum install -y kubeadm-1.10.0
 ```  
