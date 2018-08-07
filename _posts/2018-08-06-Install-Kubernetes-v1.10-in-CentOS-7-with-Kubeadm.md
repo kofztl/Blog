@@ -33,7 +33,7 @@ sysctl --system
 swapoff -a
 ```  
 修改/etc/fstab文件，注释SWAP自动挂载  
-  
+<br />  
 ## Docker安装与配置（所有节点）
   
 安装Docker
@@ -56,7 +56,7 @@ ExecStartPost=/usr/sbin/iptables -I FORWARD -s 0.0.0.0/0 -j ACCEPT
 ExecStart=/usr/bin/dockerd
 .....  
 ```  
-配置国内镜像加速器
+配置国内镜像加速器  
 因为kubeadm默认要从google的镜像仓库下载镜像，但目前国内无法访问google镜像仓库，所以需要我们配置成国内的镜像仓库，并在kubeadm init前pull下所需的镜像。  
 
 使用阿里云镜像加速器：[阿里云容器hub](https://dev.aliyun.com/search.html)。 登录之后，进入管理中心-->镜像加速器-->操作文档，根据提示进行设置即可。  
@@ -66,7 +66,7 @@ ExecStart=/usr/bin/dockerd
 ```  
 systemctl daemon-reload && systemctl restart docker && systemctl status docker
 ```  
-
+<br />  
 ## 下载镜像  
 
 Master节点  
@@ -112,7 +112,7 @@ docker tag keveon/heapster-influxdb-amd64:v1.3.3 k8s.gcr.io/heapster-influxdb-am
 docker tag keveon/heapster-grafana-amd64:v4.4.3 k8s.gcr.io/heapster-grafana-amd64:v4.4.3
 docker tag keveon/heapster-amd64:v1.4.2 k8s.gcr.io/heapster-amd64:v1.4.2
 ```  
-
+<br />  
 ## Kubernetes安装与配置（所有节点）  
 
 配置yum源并安装  
@@ -141,7 +141,7 @@ systemctl enable kubelet
 systemctl start kubelet
 ```  
 > 注： kubelet启动失败可暂时忽略，因为还没有初始化  
-
+<br />  
 ## 使用kubeadm init初始化集群（仅Master节点执行）  
 
 初始化命令  
@@ -171,7 +171,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```  
 kubectl get cs
 ```  
-
+<br />  
 ## 安装网络插件——flannel（仅Master节点执行）  
 
 ```  
@@ -187,7 +187,7 @@ daemonset.extensions "kube-flannel-ds" created
 ```  
 ip a  
 ```  
-
+<br />  
 ## 向Kubernetes中添加Node（每个Node中执行）  
 
 ```  
@@ -198,7 +198,7 @@ kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert
 ```  
 kubectl get nodes
 ```  
-
+<br />  
 ## 部署Dashboard插件  
 
 下载Dashboard插件  
