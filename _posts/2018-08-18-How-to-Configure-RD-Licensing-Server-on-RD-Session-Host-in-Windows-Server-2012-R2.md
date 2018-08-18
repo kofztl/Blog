@@ -32,6 +32,6 @@ $obj.ChangeMode(value)
 
 ```  
 $obj = gwmi -namespace "Root/CIMV2/TerminalServices" Win32_TerminalServiceSetting
-$obj. LicensingType
+$obj.LicensingType
 $obj.LicensingName  
 ```  
