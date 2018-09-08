@@ -6,9 +6,9 @@ categories: KnowledgeBase
 
 ---
 ## Symptom
-`slmgr /ato` with error: Product not found.  
+`slmgr /ato` with error: **Product not found**.  
   
-`slmgr /dlv` with error: Product key not found.  
+`slmgr /dlv` with error: **Product key not found**.  
 
 
 ## Resolution
